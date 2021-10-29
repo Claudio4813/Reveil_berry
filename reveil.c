@@ -9,13 +9,13 @@
 #include <signal.h>
 
 
-//void reveil(int);
+void reveil(int);
 
 int main(int argc,char * argv[]){
 
 
     
-    /*int alarme1,alarme2,alarme3;
+    int alarme1,alarme2,alarme3;
     alarme1=atoi(argv[1]);
     alarme2=atoi(argv[2]);
     alarme3=atoi(argv[3]);
@@ -23,7 +23,6 @@ int main(int argc,char * argv[]){
     alarm(alarme1);
     alarm(alarme2);
     alarm(alarme3);
-    */
     printf("\nAttente de l'alarme\n");	
     while(1)
     {
@@ -37,7 +36,7 @@ int main(int argc,char * argv[]){
     
 }
 
-/*
+
 void reveil(int sig) {
     printf("\nALARME !! ca sonne !! C'est l'heure !!\n");
     // Commande d'alarme RASPBERRY
@@ -45,4 +44,4 @@ void reveil(int sig) {
     //
     kill(getppid(),SIGUSR1);
     exit(0);
-}*/
+}
