@@ -13,6 +13,6 @@ Notre réveil aura les focntionnalités standards que l'on peut trouver sur un t
 
 Mais il sera aussi connecté à un **RaspBerry Pi 3.0 modèle B** pour être un peu plus festif que un réveil standard.
 
-Le fichier d'initialisation n'est pas encore finalisé.
+Le fichier d'initialisation n'est pas encore finalisé, il n'est donc pas disponible.
 
 
