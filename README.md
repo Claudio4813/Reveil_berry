@@ -15,4 +15,4 @@ Mais il sera aussi connecté à un **RaspBerry Pi 3.0 modèle B** pour être un 
 
 Le fichier d'initialisation n'est pas encore finalisé, il n'est donc pas disponible.
 
-
+Plus de détails sur : https://claudio4813.github.io/Reveil_berry/
