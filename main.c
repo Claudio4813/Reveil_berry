@@ -26,15 +26,13 @@ int main(int argc, char *argv[])
   char chrono[10];
   char reveil[10];
   char minuteur[10];
-    
-    printf("\n ---- BIENVENUE DANS VOTRE REVEIL ---- \n");
+    system("clear"); //pour terminal systeme linux
+    printf("\n ---- BIENVENUE DANS VOTRE REVEIL_BERRY ---- \n");
     while(1)
     {
         time_t now;
         time(&now);
         printf("\nl'heure est : %s",ctime(&now));
-        sleep(1);
-       // system("clear"); //pour terminal systeme linux
         printf("1- Réveil  \n");
         printf("2- Chronomètre \n");
         printf("3- Minuteur \n");
