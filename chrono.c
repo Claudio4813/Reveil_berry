@@ -30,16 +30,9 @@ int main(int argc,char * argv[]){
 
     int pid = fork(); // creation Fille
 
-    /*
-        if (pid==0) system("gnome-terminal -e ./affchro");  //utilisation de system pas bien et pas vu en cours
-        execv pas reussi a bien utiliser pour lancer l'executable dans un nouveau terminal
-        de plus cela ne permet plus de bien gerer le PID du FILS 
-    */
-
-
     if (pid==0) 
     {
-        execl("/usr/bin/xterm","xterm","-T","Chrono N°","-e","./affchro",argv[1],NULL); // utilisation de execl
+        execl("/usr/bin/x-terminal-emulator","x-terminal-emulator","-T","Chrono N°","-e","./affchro",argv[1],NULL); // utilisation de execl
     }
 
     
@@ -105,7 +98,7 @@ int main(int argc,char * argv[]){
                     cnt++;
                     //printf("\nTemps Final : %.2f",tempsend);
                     close(dp);
-                    kill(pid,SIGUSR2); // envoie a la fille le signal 12 
+                    kill(pid_c,SIGUSR2); // envoie a la fille le signal 12 
                 break;
 
                 default: printf("Linux for ever\n");
@@ -114,6 +107,6 @@ int main(int argc,char * argv[]){
         getchar();
     }
     unlink("pipo");
-    kill(pid,SIGUSR2); // envoie a la fille le signal 12 
+    kill(pid_c,SIGUSR2); // envoie a la fille le signal 12 
     //exit(0);
 }

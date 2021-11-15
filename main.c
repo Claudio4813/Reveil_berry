@@ -20,6 +20,12 @@
 int main(int argc, char *argv[])
 {
   int choix;
+  int cpt_chro=0;
+  int cpt_rev=0;
+  int cpt_min=0;
+  char chrono[10];
+  char reveil[10];
+  char minuteur[10];
     
     printf("\n ---- BIENVENUE DANS VOTRE REVEIL ---- \n");
     while(1)
@@ -43,92 +49,45 @@ int main(int argc, char *argv[])
             
            {
              case 1:
-                printf("Vous avez choisi le Réveil\n\n");
-                   printf("1- Créer une alarme \n");
-                   printf("2- Supprimer une alarme \n");
-                   printf("3- Afficher les alarmes \n");
-                int i = 0;
-                 printf("Quel est votre choix? \n\n");
-                 scanf("%d", &i);
-                switch(i){
-                 case 1:
-                     printf("\n\nchoix 1 du sous menu Réveil \n\n");
-                       execv("/reveil",NULL); // Changer le directory
-                        //execl("/Users/bin/xterm", "xterm", "-e", "/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/reveil", NULL);
-                     break;
-                 case 2:
-                     printf("\n\nchoix 2 du sous menu Réveil \n\n");
-                     break;
-                 case 3:
-                     printf("\n\nchoix 3 du sous menu Réveil \n\n");
-                     break;
-                 default:
-                     printf("Vous n'avez pas rentre un chiffre correct.\n\n");
-                     break;
-                }
+             		printf("Vous avez choisi le Réveil\n\n");
+             		cpt_rev ++;
+             		sprintf(reveil, "%d", cpt_rev);
+             		argv[1]= reveil;
+             		int pid_r = fork(); // creation FilS
+		      	if (pid_r==0) 
+   			{
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./reveil",argv[1],NULL); // utilisation de execl
+    			}
+
                 break;
              case 2:
-                 printf("Vous avez choisi le Chronomètre \n\n");
-                   printf("1- Lancer le chronomètre \n");
-                   printf("2- Arrêter le chronomètre \n");
-                   printf("3- Mettre en pause le chronomètre \n");
-                 printf("Quel est votre choix? \n\n");
-                 scanf("%d", &i);
-                switch(i){
-                 case 1:
-                     printf("\n\nchoix 1 du sous menu Chronomètre \n\n");
-                     break;
-                 case 2:
-                     printf("\n\nchoix 2 du sous menu Chronomètre \n\n");
-                     break;
-                 case 3:
-                     printf("\n\nchoix 3 du sous menu Chronomètre \n\n");
-                     break;
-                 default:
-                     printf("Vous n'avez pas rentre un chiffre correct.\n\n");
-                     break;
-                }
-                break;
+             		printf("Vous avez choisi le Chronomètre \n\n");
+             		cpt_chro ++;
+             		sprintf(chrono, "%d", cpt_chro);
+             		argv[2]= chrono;
+             		int pid_c = fork(); // creation FilS
+		      	if (pid_c==0) 
+   			{
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./chrono",argv[2],NULL); // utilisation de execl
+    			}
+    			break;
              case 3:
-                 printf("Vous avez choisi le Minuteur \n\n");
-                   printf("1- Lancer le minuteur \n");
-                   printf("2- Parametrer le minuteur \n");
-                   printf("3- Mettre en pause le minuteur \n");
-                 printf("Quel est votre choix? \n\n");
-                 scanf("%d", &i);
-                 switch(i){
-                 case 1:
-                         
-                     printf("\n\nchoix 1 du sous menu Minuteur \n\n");
-//                         int x=0;
-//                         char temps[10];
-//                         scanf("%d", &x);
-//                         char *argv[3];
-//                         sprintf(temps, "%d", x);
-//                         argv[0]= "exo1M";
-//                         argv[1]= temps;
-//                         argv[2]= NULL;
-                     
-                        // system("xterm -e ./Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/exo1M");
-                       //  execl("/usr/bin/gnome-terminal","gnome-terminal","--","./affchro",NULL); IL FAUT RAJOUTER LE BON FICHIER ET LE BON TERMINAL
-                         execv("/MinP", NULL); // Changer le directory
-                    break;
-                 case 2:
-                     printf("\n\nchoix 2 du sous menu Minuteur \n\n");
-                     break;
-                 case 3:
-                     printf("\n\nchoix 3 du sous menu Minuteur \n\n");
-                     break;
-                 default:
-                     printf("Vous n'avez pas rentre un chiffre correct.\n\n");
-                     break;
-                 }
-             break;
+             		printf("Vous avez choisi le Minuteur \n\n");
+             		cpt_min ++;
+             		sprintf(minuteur, "%d", cpt_min);
+             		argv[3]= minuteur;
+             		int pid_m = fork(); // creation FilS
+		      	if (pid_m==0) 
+   			{
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./MinP",argv[3],NULL); // utilisation de execl
+    			}
+    			break;
                case 4:
                    printf("Vous avez choisi Statistiques\n\n");
                    printf("1- Afficher les statistiques \n");
                    printf("2- Supprimer les statistiques \n");
                    printf("Quel est votre choix? \n\n");
+                   int i=0;
                    scanf("%d", &i);
                    switch(i){
                    case 1:
