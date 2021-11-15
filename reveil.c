@@ -60,10 +60,16 @@
 //    wait(NULL);
 //    return 0;
 //}
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
+#include <signal.h>
 
 int main()
 {
@@ -78,7 +84,7 @@ int main()
     scanf("%d", &heure);
     printf("\nentrez la minute : ");
     scanf("%d", &minute);
-    getchar();
+//    getchar();
     utm.tm_hour = heure;
     utm.tm_min = minute;
     
@@ -86,9 +92,14 @@ int main()
     {
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
+        time_t now;
+        time(&now);
+        printf("\nl'heure est : %s",ctime(&now));
+        sleep(1);
+        system("clear");
         if((tm.tm_hour == utm.tm_hour)&&(tm.tm_min == utm.tm_min))
         {
-            printf("BIP BIP BIP il est %d : %d", heure, minute);
+            printf("\n BIP BIP BIP il est %dh%d", heure, minute);
             return 0;
         }
 

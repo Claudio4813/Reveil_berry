@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
                 switch(i){
                  case 1:
                      printf("\n\nchoix 1 du sous menu Réveil \n\n");
-                       execv("/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/reveil",NULL);
+                       execv("/reveil",NULL); // Changer le directory
                         //execl("/Users/bin/xterm", "xterm", "-e", "/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/reveil", NULL);
                      break;
                  case 2:
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
                      
                         // system("xterm -e ./Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/exo1M");
                        //  execl("/usr/bin/gnome-terminal","gnome-terminal","--","./affchro",NULL); IL FAUT RAJOUTER LE BON FICHIER ET LE BON TERMINAL
-                         execv("/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/MinP", NULL);
+                         execv("/MinP", NULL); // Changer le directory
                     break;
                  case 2:
                      printf("\n\nchoix 2 du sous menu Minuteur \n\n");

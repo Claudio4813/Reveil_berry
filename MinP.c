@@ -37,7 +37,8 @@ int main(int argc,char * argv[])
     if(pid == 0)
     {
         char *args[] = {"MinF", temps , NULL};
-        execv("/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/MinF",args);
+        //execv("/Users/arnaud/Documents/ITII/ITII 2022/OS/Projet/MinF",args);
+        execl("/usr/bin/xterm","xterm","-e","./MinF",NULL);
     }
         sleep(1);
         signal(SIGINT, catchCtrlC);
