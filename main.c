@@ -111,10 +111,8 @@ int main(int argc, char *argv[])
                        int pid_mon = fork(); // creation FilS
 		      	if (pid_mon==0) 
    			{
-        			execl("/usr/bin/xterm", "xterm","-T","Monitoring","-e","./mon.sh",NULL); // utilisation de execl
+        			execl("/usr/bin/xterm", "xterm","-T","Monitoring, appuyer sur entrée pour fermer la fenêtre","-e","./mon.sh",NULL); // utilisation de execl
     			}
-                   printf("Fonctionnalité non developpé pour le moment. Contactez le service commercial!!!!\n");
-
              break;
                case 0:
                    return 0;
