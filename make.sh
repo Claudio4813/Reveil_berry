@@ -15,13 +15,13 @@ mkdir -p /home/ISEN/Reveil_Berry/{bin,src}
 tar -xzvf Reveil_Berry.tar.gz -C /home/ISEN/Reveil_Berry/src
 
 
-gcc Reveil_Berry/src/main.c -o Reveil_Berry/bin/main -Wall
-gcc Reveil_Berry/src/reveil.c -o Reveil_Berry/bin/reveil -Wall
-gcc Reveil_Berry/src/chrono.c -o Reveil_Berry/bin/chrono -Wall
-gcc Reveil_Berry/src/affchro.c -o Reveil_Berry/bin/affchro -Wall
-gcc Reveil_Berry/src/MinP.c -o Reveil_Berry/bin/MinP -Wall
-gcc Reveil_Berry/src/MinF.c -o Reveil_Berry/bin/MinF -Wall
-cp mon.sh home/ISEN/Reveil_Berry/bin/mon.sh
+gcc /home/ISEN/Reveil_Berry/src/main.c -o /home/ISEN/Reveil_Berry/bin/main -Wall
+gcc /home/ISEN/Reveil_Berry/src/reveil.c -o /home/ISEN/Reveil_Berry/bin/reveil -Wall
+gcc /home/ISEN/Reveil_Berry/src/chrono.c -o /home/ISEN/Reveil_Berry/bin/chrono -Wall
+gcc /home/ISEN/Reveil_Berry/src/affchro.c -o /home/ISEN/Reveil_Berry/bin/affchro -Wall
+gcc /home/ISEN/Reveil_Berry/src/MinP.c -o /home/ISEN/Reveil_Berry/bin/MinP -Wall
+gcc /home/ISEN/Reveil_Berry/src/MinF.c -o /home/ISEN/Reveil_Berry/bin/MinF -Wall
+cp /home/ISEN/Reveil_Berry/src/mon.sh home/ISEN/Reveil_Berry/bin/mon.sh
 
 
 echo "S'il n'y a pas de message d'erreur, vous pouvez fermer le terminal. Sinon merci de contacter l'équipe Technique"
