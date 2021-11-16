@@ -21,7 +21,7 @@ gcc Reveil_Berry/src/chrono.c -o Reveil_Berry/bin/chrono -Wall
 gcc Reveil_Berry/src/affchro.c -o Reveil_Berry/bin/affchro -Wall
 gcc Reveil_Berry/src/MinP.c -o Reveil_Berry/bin/MinP -Wall
 gcc Reveil_Berry/src/MinF.c -o Reveil_Berry/bin/MinF -Wall
-cp mon.sh Reveil_Berry/bin/mon.sh
+cp mon.sh home/ISEN/Reveil_Berry/bin/mon.sh
 
 
 echo "S'il n'y a pas de message d'erreur, vous pouvez fermer le terminal. Sinon merci de contacter l'équipe Technique"
