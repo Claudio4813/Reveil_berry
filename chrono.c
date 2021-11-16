@@ -32,7 +32,7 @@ int main(int argc,char * argv[]){
 
     if (pid==0) 
     {
-        execl("/usr/bin/x-terminal-emulator","x-terminal-emulator","-T","Chrono N°","-e","./affchro",argv[1],NULL); // utilisation de execl
+        execl("/usr/bin/x-terminal-emulator","x-terminal-emulator","-T","Affichage Chronometre","-e","./affchro",argv[1],NULL); // utilisation de execl
     }
 
     
@@ -75,28 +75,25 @@ int main(int argc,char * argv[]){
                     dp=open("pipo",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
                     nb=read(dp,&temps1,4);
                     cnt++;
-                    //printf("\n\n\nTemps intermediaire 1 : %.2f",temps1);
                     close(dp);
                 break;
                 case 2:
                     dp=open("pipo",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
                     nb=read(dp,&temps2,4);
                     cnt++;
-                    //printf("\nTemps intermediaire 2 : %.2f",temps2);
                     close(dp);
                 break;
                 case 3:
                     dp=open("pipo",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
                     nb=read(dp,&temps3,4);
                     cnt++;
-                    //printf("\nTemps intermediaire 3 : %.2f",temps3);
-                    close(dp);
+                     close(dp);
                 break;
                 case 4:
                     dp=open("pipo",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
                     nb=read(dp,&tempsend,4);
                     cnt++;
-                    //printf("\nTemps Final : %.2f",tempsend);
+
                     close(dp);
                     kill(pid_c,SIGUSR2); // envoie a la fille le signal 12 
                 break;
@@ -108,5 +105,5 @@ int main(int argc,char * argv[]){
     }
     unlink("pipo");
     kill(pid_c,SIGUSR2); // envoie a la fille le signal 12 
-    //exit(0);
+
 }

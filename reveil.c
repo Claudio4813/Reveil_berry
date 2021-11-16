@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     char c='a';
     time_t now;
     time(&now);
-    printf("\nl'heure est : %s",ctime(&now));
+    printf("\nIl est : %s",ctime(&now));
     time_t ut = time(NULL);
     struct tm utm = *localtime(&ut);
     int heure, minute;
@@ -35,8 +35,9 @@ int main(int argc, char *argv[])
         struct tm tm = *localtime(&t);
         time_t now;
         time(&now);
-        printf("\nReveil n° %d",arg);
-        printf("\nl'heure est : %s",ctime(&now));
+        printf("\nReveil n° %d\n",arg);
+        printf("L alarme du reveil est regle a %dH%d\n",heure,minute);
+        printf("\nIl est actuellement : %s\n",ctime(&now));
         sleep(1);
         system("clear");
         if((tm.tm_hour == utm.tm_hour)&&(tm.tm_min == utm.tm_min))

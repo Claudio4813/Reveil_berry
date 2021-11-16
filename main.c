@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
   char chrono[10];
   char reveil[10];
   char minuteur[10];
-    system("clear"); //pour terminal systeme linux
+  system("clear"); //pour terminal systeme linux
     printf("\n ---- BIENVENUE DANS VOTRE REVEIL_BERRY ---- \n");
     while(1)
     {
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
              		int pid_r = fork(); // creation FilS
 		      	if (pid_r==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./reveil",argv[1],NULL); // utilisation de execl
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Reveil","-e", "./reveil",argv[1],NULL); // utilisation de execl
     			}
 
                 break;
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
              		int pid_c = fork(); // creation FilS
 		      	if (pid_c==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./chrono",argv[2],NULL); // utilisation de execl
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Chronometre","-e", "./chrono",argv[2],NULL); // utilisation de execl
     			}
     			break;
              case 3:
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
              		int pid_m = fork(); // creation FilS
 		      	if (pid_m==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-e", "./MinP",argv[3],NULL); // utilisation de execl
+        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Minuteur","-e", "./MinP",argv[3],NULL); // utilisation de execl
     			}
     			break;
                case 4:
