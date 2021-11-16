@@ -40,6 +40,9 @@ int main(int argc, char* argv[])
         system("clear");
         delai--;
     }
+    dp=open("pipm",O_WRONLY) ; // Ouverture du pipe en ecriture
+    write(dp, &delai ,4);
+    close(dp);
     return 0;
 }
 

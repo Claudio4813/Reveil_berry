@@ -44,7 +44,7 @@ int main(int argc,char * argv[])
     if(pid == 0)
     {
         char *args[] = {"MinF", argv[1],temps , NULL};
-        execl("/usr/bin/x-terminal-emulator","x-terminal-emulator","-T","Affichage Minuteur","-e","./MinF",args[1],args[2],NULL);
+        execl("/usr/bin/xterm","xterm","-T","Affichage Minuteur","-e","./MinF",args[1],args[2],NULL);
     }
         
     sleep(1);

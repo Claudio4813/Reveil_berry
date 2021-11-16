@@ -30,9 +30,6 @@ int main(int argc,char * argv[]){
 
     int pidf=getpid();
     int arg=atoi(argv[1]);
-
-    //printf("PID affchro %d\n",pidf);
-    
     dp=open("pipo",O_WRONLY) ; // Ouverture du pipe en ecriture
     write(dp, &pidf ,4);
     close(dp);
@@ -43,7 +40,7 @@ int main(int argc,char * argv[]){
     while(1)
     {
         printf("\nCa compte des secondes avec une précision de dizieme de seconde: %.2f",now);
-        printf("\nChronomètre n° %d",arg);
+        printf("\nAffichage du chronomètre n° %d",arg);
     	usleep(100000);
         now=now+0.1;
     	system("clear"); //pour terminal systeme linux

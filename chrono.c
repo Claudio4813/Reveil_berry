@@ -32,7 +32,7 @@ int main(int argc,char * argv[]){
 
     if (pid==0) 
     {
-        execl("/usr/bin/x-terminal-emulator","x-terminal-emulator","-T","Affichage Chronometre","-e","./affchro",argv[1],NULL); // utilisation de execl
+        execl("/usr/bin/xterm","xterm","-T","Affichage Chronometre","-e","./affchro",argv[1],NULL); // utilisation de execl
     }
 
     

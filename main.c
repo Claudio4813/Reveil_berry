@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
              		int pid_r = fork(); // creation FilS
 		      	if (pid_r==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Reveil","-e", "./reveil",argv[1],NULL); // utilisation de execl
+        			execl("/usr/bin/xterm", "xterm","-T","Reveil","-e", "./reveil",argv[1],NULL); // utilisation de execl
     			}
 
                 break;
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
              		int pid_c = fork(); // creation FilS
 		      	if (pid_c==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Chronometre","-e", "./chrono",argv[2],NULL); // utilisation de execl
+        			execl("/usr/bin/xterm", "xterm","-T","Chronometre","-e", "./chrono",argv[2],NULL); // utilisation de execl
     			}
     			break;
              case 3:
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
              		int pid_m = fork(); // creation FilS
 		      	if (pid_m==0) 
    			{
-        			execl("/usr/bin/x-terminal-emulator", "x-terminal-emulator","-T","Minuteur","-e", "./MinP",argv[3],NULL); // utilisation de execl
+        			execl("/usr/bin/xterm", "xterm","-T","Minuteur","-e", "./MinP",argv[3],NULL); // utilisation de execl
     			}
     			break;
                case 4:
@@ -89,10 +89,17 @@ int main(int argc, char *argv[])
                    scanf("%d", &i);
                    switch(i){
                    case 1:
-                       printf("\n\nchoix 1 du sous menu Statistiques\n\n");
+                       printf("\n\nAffichage des statistiques\n\n");
+                       printf("Vous avez lancé %d reveil(s)\n",cpt_rev);
+                       printf("Vous avez lancé %d minuteur(s)\n",cpt_min);
+                       printf("Vous avez lancé %d chronomètre(s)\n",cpt_chro);
                        break;
                    case 2:
-                       printf("\n\nchoix 2 du sous menu Statistiques\n\n");
+                       printf("\n\nSupression des satistiques\n\n");
+                       printf("Remise à zéro des compteurs\n");
+                       cpt_rev=0;
+                       cpt_min=0;
+                       cpt_chro=0;
                        break;
                    default:
                        printf("Vous n'avez pas rentre un chiffre correct.\n\n");
@@ -100,26 +107,14 @@ int main(int argc, char *argv[])
                    }
              break;
                case 5:
-                   printf("Vous avez choisi le Monitoring \n\n");
-                   printf("1- Afficher la consommation de ressources nécessaires \n");
-                   printf("2- Réinitialiser la consommation de ressources nécessaires \n");
-                   printf("3- xxxx \n");
-                   printf("Quel est votre choix? \n\n");
-                   scanf("%d", &i);
-                   switch(i){
-                   case 1:
-                       printf("\n\nchoix 1 du sous menu Monitoring\n\n");
-                       break;
-                   case 2:
-                       printf("\n\nchoix 2 du sous menu Monitoring \n\n");
-                       break;
-                   case 3:
-                       printf("\n\nchoix 3 du sous menu Monitoring \n\n");
-                       break;
-                   default:
-                       printf("Vous n'avez pas rentre un chiffre correct.\n\n");
-                       break;
-                   }
+                   	printf("Vous avez choisi le Monitoring \n\n");
+                       int pid_mon = fork(); // creation FilS
+		      	if (pid_mon==0) 
+   			{
+        			execl("/usr/bin/xterm", "xterm","-T","Monitoring","-e","./mon.sh",NULL); // utilisation de execl
+    			}
+                   printf("Fonctionnalité non developpé pour le moment. Contactez le service commercial!!!!\n");
+
              break;
                case 0:
                    return 0;
