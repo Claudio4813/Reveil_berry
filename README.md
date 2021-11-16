@@ -4,7 +4,7 @@
 >Fichier en cours de construction.
 >Il sera transférer à terme sous gitpages.
 
-Notre réveil aura les focntionnalités standards que l'on peut trouver sur un téléphone:
+Notre réveil aura les fonctionnalités standard que l'on peut trouver sur un téléphone:
 * Réveil 
 * Chronomètre
   * Possibilité de stocker jusqu'à 3 temps intermédiaires
