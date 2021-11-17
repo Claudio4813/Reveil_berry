@@ -12,6 +12,8 @@
 
 int main(int argc, char *argv[])
 {
+    
+
     int arg=atoi(argv[1]);
     printf("\nReveil n° %d",arg);
     char c='a';
@@ -29,6 +31,8 @@ int main(int argc, char *argv[])
     utm.tm_hour = heure;
     utm.tm_min = minute;
     
+
+
     while(c!='q')
     {
         time_t t = time(NULL);
@@ -43,6 +47,7 @@ int main(int argc, char *argv[])
         if((tm.tm_hour == utm.tm_hour)&&(tm.tm_min == utm.tm_min))
         {
             printf("\n BIP BIP BIP il est %dh%d", heure, minute);
+            system("play pan.wav");
             printf("\n Pour arreter le reveil, taper q\n");
             scanf("%s", &c);
             getchar();
