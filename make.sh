@@ -5,6 +5,8 @@
 
 echo "installation du Reveil_Berry"
 
+sudo useradd isen -p isen --create-home -U --shell /bin/bash
+su isen isen
 sudo apt-get update
 sudo apt-get -y install xterm
 sudo apt-get -y install build-essential
