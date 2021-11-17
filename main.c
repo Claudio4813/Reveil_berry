@@ -41,6 +41,7 @@ int main(int argc, char *argv[])
         printf("0- Quitter le menu \n");
         printf("\n\nQuel est votre choix? ");
         scanf("%d", &choix);
+	    getchar();
 
         printf("\n");
         switch (choix)
