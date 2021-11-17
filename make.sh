@@ -8,12 +8,12 @@ echo "installation du Reveil_Berry"
 sudo apt-get update
 sudo apt-get -y install xterm
 sudo apt-get -y install build-essential
+sudo apt install sox
 
 cd
 mkdir -p /home/ISEN/Reveil_Berry/{bin,src}
 
 tar -xzvf Reveil_Berry.tar.gz -C /home/ISEN/Reveil_Berry/src
-
 
 gcc /home/ISEN/Reveil_Berry/src/main.c -o /home/ISEN/Reveil_Berry/bin/main -Wall
 gcc /home/ISEN/Reveil_Berry/src/reveil.c -o /home/ISEN/Reveil_Berry/bin/reveil -Wall
