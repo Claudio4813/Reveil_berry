@@ -8,8 +8,10 @@ echo "installation du Reveil_Berry"
 ###
 # Essai de creation automatique du profil User ISEN --> No success
 #
-# sudo useradd isen -p isen --create-home -U --shell /bin/bash
-# su isen
+# sudo useradd ISEN --create-home -U --shell /bin/bash
+# sudo passwd ISEN
+# su ISEN
+#
 ###
 
 sudo apt-get update
