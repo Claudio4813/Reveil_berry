@@ -20,4 +20,6 @@ Pour installer :
  - Le mettre dans le meme dossier
  - Lancer le fichier make.sh
 
+Warning : Il faut que le user ISEN soit déjà crée avec son environnement (Home, bash, groupe...)
+
 Le script d'installation va mettre à jour si besoin le programme Linux, installer les programmes necessaires au fonctionnement de reveil, copier les sources et les compiler.
