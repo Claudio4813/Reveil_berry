@@ -1,8 +1,6 @@
 # Reveil_berry
 ## Projet système exploitation P18M groupe 1 (Arnaud/Vincent/Frederic/Claude)
 
->Fichier en cours de construction.
->Il sera transférer à terme sous gitpages.
 
 Notre réveil aura les fonctionnalités standard que l'on peut trouver sur un téléphone:
 * Réveil 
