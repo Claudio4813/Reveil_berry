@@ -14,6 +14,7 @@ int pid;
 int conversion(int h, int m, int s);
 int nb=0;
 int pid_m;
+int x=0;
 
 void catchCtrlC()
 {
@@ -26,20 +27,21 @@ int main(int argc,char * argv[])
     int arg=atoi(argv[1]);
     int dp;
     printf("\nMinuteur n° %d\n",arg);
-    int Heure, Minute, Seconde, x;
-    printf("Entrez heure ? ");
+    int Heure, Minute, Seconde;
+    printf("\nEntrez heure ? ");
     scanf("%d", &Heure);
-    printf("Entrez Minute ? ");
+    printf("\nEntrez Minute ? ");
     scanf("%d", &Minute);
-    printf("Entrez Seconde ? ");
+    printf("\nEntrez Seconde ? ");
     scanf("%d", &Seconde);
     x = conversion(Heure,Minute,Seconde);//Heure/3600 + Minute/60 + Seconde
     char temps[10];
-    printf("\n   Minuteur créer pour : %d secondes",x);
+    printf("\n   Minuteur crée pour : %d secondes\n",x);
     sprintf(temps,"%d",x);
     pid = fork();
     unlink("pipm"); // fermeture au cas ou
     mkfifo("pipm",0750); // création du pipe 
+    signal(SIGINT, catchCtrlC);
 
     if(pid == 0)
     {
@@ -51,13 +53,18 @@ int main(int argc,char * argv[])
     dp=open("pipm",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
     nb=read(dp,&pid_m,4);
     close(dp);
+
     printf("   Appuyer sur ctrl C pour arreter le minuteur\n");
-    signal(SIGINT, catchCtrlC);
-    sleep(1);
-    dp=open("pipm",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père
+    getchar();
+    
+    signal(SIGINT, SIG_DFL);
+
+    dp=open("pipm",O_RDONLY) ; // ouverture du fichier pipe en READ pour le père et att temps restant au fils
     nb=read(dp,&x,4);
     close(dp);
+    
     printf("   BIP ! BIP ! BIP ! Il restait %d secondes\n",x);
+    system("play pan.wav");
     printf("   Appuyer sur ctrl C pour fermer le minuteur ou fermeture auto apres 1 minute\n");
     sleep(60);
     return 0;

@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
     dp=open("pipm",O_WRONLY) ; // Ouverture du pipe en ecriture
     write(dp, &pidf ,4);
     close(dp);
+
     numero=atoi(argv[1]);
     printf("\n     Debut du minuteur N° %d\n",numero);
     delai=atoi(argv[2]);
@@ -43,6 +44,7 @@ int main(int argc, char* argv[])
     dp=open("pipm",O_WRONLY) ; // Ouverture du pipe en ecriture
     write(dp, &delai ,4);
     close(dp);
+    exit(0);
     return 0;
 }
 
